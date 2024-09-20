@@ -1,0 +1,15 @@
+{
+    "user":{
+        "Name": "Jorge Raul",
+        "Last_name":"Benitez Gutierrez",
+        "Cancer_type":"Lung Cancer",
+        "Cancer_stage":"2",
+        "SSN":"75783847",
+        "Country":"México",
+        "State":"Durango",
+        "Doctor_name":"Luis",
+        "Doctor_lastname":"Lopez"    
+    }
+    
+
+}
