@@ -29,9 +29,10 @@ func Server() {
 		AllowHeaders:     []string{"*"},
 		AllowCredentials: true,
 	}))
-
+	//Recibe topic en form value
 	app.Post("/Recommendation", controllers.Recommendation)
 	app.Get("/GetUser", controllers.GetUser)
+	// recibe prompt en form value
 	app.Post("/ChatBot", chat.ChatBot)
 
 	log.Fatal(app.Listen(":" + port))

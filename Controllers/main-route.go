@@ -45,7 +45,7 @@ func Recommendation(c fiber.Ctx) error {
 
 	randomRecommendation := recommendations[randomIndex]
 
-	// USO DEL APi
+	// USO DEL APi esta funcional la implementacion pero se requiere pagar para usarlo.
 	// client := api.ConnectApi()
 
 	// respons, err := client.Chat.Completions.New(context.TODO(), openai.ChatCompletionNewParams{

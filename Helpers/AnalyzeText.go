@@ -41,6 +41,6 @@ func AnalyzeText(prompt string) string {
 			}
 		}
 	}
-	return findMaxValue(counter)
+ 	return findMaxValue(counter)
 
 }
