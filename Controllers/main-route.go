@@ -58,3 +58,5 @@ func GetUser(c fiber.Ctx) error {
 
 	return c.Status(200).JSON(response)
 }
+
+

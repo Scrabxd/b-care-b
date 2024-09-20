@@ -1,6 +1,7 @@
 package server
 
 import (
+	chat "b-care/Chat"
 	controllers "b-care/Controllers"
 	helpers "b-care/Helpers"
 	"log"
@@ -31,6 +32,7 @@ func Server() {
 
 	app.Post("/recommendation", controllers.Recommendation)
 	app.Get("/GetUser", controllers.GetUser)
+	app.Post("/ChatBot", chat.ChatBot)
 
 	log.Fatal(app.Listen(":" + port))
 
