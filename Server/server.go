@@ -30,7 +30,7 @@ func Server() {
 		AllowCredentials: true,
 	}))
 
-	app.Post("/recommendation", controllers.Recommendation)
+	app.Post("/Recommendation", controllers.Recommendation)
 	app.Get("/GetUser", controllers.GetUser)
 	app.Post("/ChatBot", chat.ChatBot)
 

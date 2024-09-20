@@ -5,6 +5,8 @@ import (
 	"encoding/json"
 	"os"
 
+	"math/rand"
+
 	"github.com/gofiber/fiber/v3"
 )
 
@@ -37,9 +39,35 @@ func Recommendation(c fiber.Ctx) error {
 		return c.Status(400).JSON(response)
 	}
 
-	// USO DEL APi
-	return nil
+	recommendations := []string{"Recuerde hacer ejercicio regularmente.", "Debe mantener un peso saludable", "Deje de fumar, ¡Usted puede lograrlo!", "Se detecto una cantidad inusual de Radon en el air en Durango, porfavor mantenga sus precauciones,"}
 
+	randomIndex := rand.Intn(len(recommendations) + 1)
+
+	randomRecommendation := recommendations[randomIndex]
+
+	// USO DEL APi
+	// client := api.ConnectApi()
+
+	// respons, err := client.Chat.Completions.New(context.TODO(), openai.ChatCompletionNewParams{
+	// 	Messages: openai.F([]openai.ChatCompletionMessageParamUnion{
+	// 		openai.UserMessage("Say hello scrabby."),
+	// 	}),
+	// 	Model: openai.F(openai.ChatModelGPT3_5Turbo),
+	// })
+	// if err != nil {
+	// 	response = map[string]interface{}{
+	// 		"Message": "Error consiguiendo una recomendación.",
+	// 		"Status":  500,
+	// 		"Error":   err.Error(),
+	// 	}
+	// 	return c.Status(500).JSON(response)
+	// }
+	response = map[string]interface{}{
+		"Message": randomRecommendation,
+		"Status":  200,
+	}
+
+	return c.Status(200).JSON(response)
 }
 
 func GetUser(c fiber.Ctx) error {
@@ -58,5 +86,3 @@ func GetUser(c fiber.Ctx) error {
 
 	return c.Status(200).JSON(response)
 }
-
-
